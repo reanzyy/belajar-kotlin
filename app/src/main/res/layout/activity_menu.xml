@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F1F5F9"
+    android:gravity="center_horizontal"
+    android:padding="24dp"
+    tools:context=".MenuActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Praktikum Penyimpanan Data"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#0F172A"
+        android:layout_marginTop="32dp"
+        android:gravity="center" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SharedPreferences (File XML Storage)"
+        android:textSize="14sp"
+        android:textColor="#64748B"
+        android:layout_marginTop="6dp"
+        android:layout_marginBottom="36dp"
+        android:gravity="center" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="3dp"
+        app:cardBackgroundColor="#FFFFFF"
+        app:strokeWidth="1dp"
+        app:strokeColor="#E2E8F0"
+        android:layout_marginBottom="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Menu Pilihan Praktikum"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#1E293B"
+                android:layout_marginBottom="16dp" />
+
+            <Button
+                android:id="@+id/btnMenu1"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="1. Simpan 1 Data"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:backgroundTint="#2563EB"
+                android:textColor="#FFFFFF"
+                app:cornerRadius="10dp"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Latihan dasar menyimpan 1 key-value (nama) ke SharedPreferences."
+                android:textSize="12sp"
+                android:textColor="#64748B"
+                android:layout_marginBottom="16dp" />
+
+            <Button
+                android:id="@+id/btnMenu2"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="2. Simpan Banyak Data"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:backgroundTint="#0D9488"
+                android:textColor="#FFFFFF"
+                app:cornerRadius="10dp"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Latihan lanjutan menyimpan banyak data (JSON Array) dengan RecyclerView &amp; sinkronisasi real-time."
+                android:textSize="12sp"
+                android:textColor="#64748B"
+                android:layout_marginBottom="16dp"/>
+
+            <Button
+                android:id="@+id/btnMenu3"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="3. Membuat Data List View"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:backgroundTint="#21123E"
+                android:textColor="#FFFFFF"
+                app:cornerRadius="10dp"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Latihan lanjutan menyimpan banyak data (JSON Array) dengan RecyclerView &amp; sinkronisasi real-time."
+                android:textSize="12sp"
+                android:textColor="#64748B"
+                android:layout_marginBottom="16dp"/>
+
+            <Button
+                android:id="@+id/btnMenu4"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="4. Recycle List View"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:backgroundTint="#800020"
+                android:textColor="#FFFFFF"
+                app:cornerRadius="10dp"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Latihan lanjutan menyimpan banyak data (JSON Array) dengan RecyclerView &amp; sinkronisasi real-time."
+                android:textSize="12sp"
+                android:textColor="#64748B"
+                android:layout_marginBottom="16dp"/>
+
+        </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+</LinearLayout>

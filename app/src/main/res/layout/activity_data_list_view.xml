@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#F8F9FA"
+    tools:context=".DataListViewActivity">
+
+    <!-- Header Tutorial -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tutorial List View &amp; Recycler View"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="#2D3748"
+        android:gravity="center"
+        android:layout_marginBottom="16dp" />
+
+    <!-- SEKSI 1: LIST VIEW (Dasar) -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1. Contoh ListView (Dasar)"
+        android:textStyle="bold"
+        android:textColor="#4A5568"
+        android:layout_marginBottom="8dp"/>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="2dp"
+        android:layout_marginBottom="24dp">
+
+        <ListView
+            android:id="@+id/lvDasar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="#E2E8F0"
+            android:dividerHeight="1dp" />
+    </androidx.cardview.widget.CardView>
+
+    <!-- SEKSI 2: RECYCLER VIEW (Modern) -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="2. Contoh RecyclerView (Modern)"
+        android:textStyle="bold"
+        android:textColor="#4A5568"
+        android:layout_marginBottom="8dp"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvModern"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        tools:listitem="@layout/item_data" />
+
+</LinearLayout>

@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Belajar Storage</string>
+    <string name="title_activity_data_list_view">DataListView</string>
+</resources>
