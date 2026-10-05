@@ -4,40 +4,48 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/background">
+    android:background="@color/background"
+    android:orientation="vertical">
 
     <!-- Top App Bar -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:background="@color/primary"
+        android:elevation="4dp"
         android:gravity="center_vertical"
         android:orientation="horizontal"
-        android:paddingHorizontal="16dp"
-        android:elevation="4dp">
+        android:paddingHorizontal="16dp">
 
-        <!-- Tombol Back/Kembali -->
         <ImageButton
             android:id="@+id/btnBack"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
             android:background="?attr/selectableItemBackgroundBorderless"
-            android:src="@android:drawable/ic_menu_revert"
-            app:tint="@color/white"
-            android:contentDescription="Kembali" />
+            android:contentDescription="@string/cd_back"
+            android:src="@drawable/ic_arrow_back"
+            app:tint="@color/white" />
 
-        <!-- Menggunakan ID tvInvoiceNo untuk header top bar agar terlihat seperti E-Receipt app pada umumnya -->
         <TextView
-            android:id="@+id/tvInvoiceNo"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
             android:layout_weight="1"
-            android:text="INV-00000000"
+            android:text="@string/title_invoice_screen"
             android:textColor="@color/white"
             android:textSize="18sp"
-            android:textStyle="bold"
-            android:layout_marginStart="8dp" />
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvInvoiceNo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bg_verified_chip"
+            android:backgroundTint="#33FFFFFF"
+            android:text="INV-00000000"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            android:textStyle="bold" />
     </LinearLayout>
 
     <ScrollView
@@ -52,53 +60,64 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <!-- Section 1: Payment Status & Date -->
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center_horizontal"
-                android:orientation="vertical"
-                android:layout_marginBottom="24dp"
-                android:layout_marginTop="8dp">
-
-                <ImageView
-                    android:layout_width="56dp"
-                    android:layout_height="56dp"
-                    android:src="@android:drawable/ic_dialog_info"
-                    app:tint="@color/success"
-                    android:layout_marginBottom="12dp"/>
-
-                <!-- tvStatusBadge (contoh: PAID) dibuat lebih menonjol -->
-                <TextView
-                    android:id="@+id/tvStatusBadge"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="PAID"
-                    android:textColor="@color/success"
-                    android:textSize="20sp"
-                    android:textStyle="bold"
-                    android:layout_marginBottom="8dp"/>
-
-                <!-- Tanggal Transaksi -->
-                <TextView
-                    android:id="@+id/tvTransactionDate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Transaction Date"
-                    android:textColor="@color/text_secondary"
-                    android:textSize="14sp" />
-            </LinearLayout>
-
-            <!-- Section 2: Info Pengirim & Penerima -->
+            <!-- Section 1: Payment Status & Receipt Header -->
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 app:cardBackgroundColor="@color/surface"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="1dp"
-                app:strokeWidth="1dp"
-                app:strokeColor="@color/divider">
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                app:strokeColor="@color/divider"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <ImageView
+                        android:layout_width="64dp"
+                        android:layout_height="64dp"
+                        android:layout_marginBottom="12dp"
+                        android:contentDescription="@string/app_name"
+                        android:src="@drawable/ic_check_circle"
+                        app:tint="@color/success" />
+
+                    <TextView
+                        android:id="@+id/tvStatusBadge"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/bg_status_badge_paid"
+                        android:text="@string/status_settled"
+                        android:textColor="@color/success_dark"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tvTransactionDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="Tanggal Transaksi"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="13sp" />
+                </LinearLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Section 2: Info Penjual & Pembeli -->
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="@color/surface"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                app:strokeColor="@color/divider"
+                app:strokeWidth="1dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -106,45 +125,110 @@
                     android:orientation="vertical"
                     android:padding="16dp">
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <!-- Merchant Row -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Detail Penjual"
-                        android:textColor="@color/text_secondary"
-                        android:textSize="12sp"
-                        android:layout_marginBottom="4dp"/>
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/tvMerchantName"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Merchant Name"
-                        android:textColor="@color/text_primary"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:layout_marginBottom="16dp" />
+                        <ImageView
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:background="@drawable/bg_circle_icon"
+                            android:contentDescription="@string/app_name"
+                            android:padding="8dp"
+                            android:src="@drawable/ic_store"
+                            app:tint="@color/primary_accent" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/label_merchant_section"
+                                android:textColor="@color/text_muted"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:gravity="center_vertical"
+                                android:orientation="horizontal">
+
+                                <TextView
+                                    android:id="@+id/tvMerchantName"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Merchant Name"
+                                    android:textColor="@color/text_primary"
+                                    android:textSize="15sp"
+                                    android:textStyle="bold" />
+
+                                <ImageView
+                                    android:layout_width="16dp"
+                                    android:layout_height="16dp"
+                                    android:layout_marginStart="6dp"
+                                    android:contentDescription="@string/app_name"
+                                    android:src="@drawable/ic_verified"
+                                    app:tint="@color/primary_accent" />
+                            </LinearLayout>
+                        </LinearLayout>
+                    </LinearLayout>
 
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:background="@color/divider"
-                        android:layout_marginBottom="16dp" />
+                        android:layout_marginVertical="12dp"
+                        android:background="@color/divider" />
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <!-- Customer Row -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Detail Pembeli"
-                        android:textColor="@color/text_secondary"
-                        android:textSize="12sp"
-                        android:layout_marginBottom="4dp"/>
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/tvCustomerName"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Customer Info"
-                        android:textColor="@color/text_primary"
-                        android:textSize="14sp" />
+                        <ImageView
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:background="@drawable/bg_circle_icon"
+                            android:contentDescription="@string/app_name"
+                            android:padding="8dp"
+                            android:src="@drawable/ic_person"
+                            app:tint="@color/primary_accent" />
+
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/label_customer_section"
+                                android:textColor="@color/text_muted"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tvCustomerName"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Customer Info"
+                                android:textColor="@color/text_primary"
+                                android:textSize="14sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+                    </LinearLayout>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 
@@ -154,10 +238,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
                 app:cardBackgroundColor="@color/surface"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="1dp"
-                app:strokeWidth="1dp"
-                app:strokeColor="@color/divider">
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                app:strokeColor="@color/divider"
+                app:strokeWidth="1dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -165,14 +249,29 @@
                     android:orientation="vertical"
                     android:padding="16dp">
 
-                    <TextView
-                        android:layout_width="wrap_content"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Rincian Pembelian"
-                        android:textColor="@color/text_primary"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:layout_marginBottom="8dp" />
+                        android:layout_marginBottom="12dp"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="24dp"
+                            android:layout_height="24dp"
+                            android:contentDescription="@string/app_name"
+                            android:src="@drawable/ic_shopping_bag"
+                            app:tint="@color/primary_accent" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="@string/label_items_section"
+                            android:textColor="@color/text_primary"
+                            android:textSize="15sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
 
                     <androidx.recyclerview.widget.RecyclerView
                         android:id="@+id/rvInvoiceItems"
@@ -188,10 +287,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:cardBackgroundColor="@color/surface"
-                app:cardCornerRadius="12dp"
-                app:cardElevation="1dp"
-                app:strokeWidth="1dp"
-                app:strokeColor="@color/divider">
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                app:strokeColor="@color/divider"
+                app:strokeWidth="1dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -202,24 +301,27 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="16dp"
                         android:text="Ringkasan Pembayaran"
                         android:textColor="@color/text_primary"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:layout_marginBottom="16dp" />
+                        android:textSize="15sp"
+                        android:textStyle="bold" />
 
+                    <!-- Subtotal -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginBottom="8dp">
+                        android:layout_marginBottom="10dp"
+                        android:orientation="horizontal">
+
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Subtotal"
+                            android:text="@string/label_subtotal"
                             android:textColor="@color/text_secondary"
                             android:textSize="14sp" />
+
                         <TextView
                             android:id="@+id/tvSubtotalAmt"
                             android:layout_width="wrap_content"
@@ -230,19 +332,22 @@
                             android:textStyle="bold" />
                     </LinearLayout>
 
+                    <!-- Promo / Voucher Discount -->
                     <LinearLayout
                         android:id="@+id/llDiscount"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginBottom="4dp">
+                        android:layout_marginBottom="10dp"
+                        android:orientation="horizontal">
+
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Diskon"
+                            android:text="@string/label_discount"
                             android:textColor="@color/text_secondary"
                             android:textSize="14sp" />
+
                         <TextView
                             android:id="@+id/tvDiscountAmt"
                             android:layout_width="wrap_content"
@@ -257,25 +362,28 @@
                         android:id="@+id/tvPromoStatus"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
                         android:text="Tidak menggunakan promo"
-                        android:textColor="@color/text_secondary"
+                        android:textColor="@color/text_muted"
                         android:textSize="12sp"
                         android:textStyle="italic"
-                        android:visibility="gone"
-                        android:layout_marginBottom="8dp"/>
+                        android:visibility="gone" />
 
+                    <!-- Tax PPN 11% -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginBottom="8dp">
+                        android:layout_marginBottom="10dp"
+                        android:orientation="horizontal">
+
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Pajak PPN 11%"
+                            android:text="@string/label_tax_ppn"
                             android:textColor="@color/text_secondary"
                             android:textSize="14sp" />
+
                         <TextView
                             android:id="@+id/tvTaxAmt"
                             android:layout_width="wrap_content"
@@ -286,18 +394,21 @@
                             android:textStyle="bold" />
                     </LinearLayout>
 
+                    <!-- Service Fee -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginBottom="16dp">
+                        android:layout_marginBottom="16dp"
+                        android:orientation="horizontal">
+
                         <TextView
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Biaya Layanan"
+                            android:text="@string/label_service_fee"
                             android:textColor="@color/text_secondary"
                             android:textSize="14sp" />
+
                         <TextView
                             android:id="@+id/tvFeeAmt"
                             android:layout_width="wrap_content"
@@ -310,31 +421,53 @@
 
                     <View
                         android:layout_width="match_parent"
-                        android:layout_height="2dp"
-                        android:background="@color/divider"
-                        android:layout_marginBottom="16dp" />
+                        android:layout_height="1dp"
+                        android:layout_marginBottom="16dp"
+                        android:background="@color/divider" />
 
+                    <!-- Highlight Total Payment Container -->
                     <LinearLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:background="@drawable/bg_hero_card"
+                        android:gravity="center_vertical"
                         android:orientation="horizontal"
-                        android:gravity="center_vertical">
-                        <TextView
+                        android:padding="16dp">
+
+                        <LinearLayout
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
-                            android:text="Total Pembayaran"
-                            android:textColor="@color/text_primary"
-                            android:textStyle="bold"
-                            android:textSize="16sp" />
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="@string/label_total_paid"
+                                android:textColor="#93C5FD"
+                                android:textSize="11sp"
+                                android:textStyle="bold" />
+
+                            <TextView
+                                android:id="@+id/tvTotalPaid"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="Rp 0"
+                                android:textColor="@color/white"
+                                android:textSize="20sp"
+                                android:textStyle="bold" />
+                        </LinearLayout>
+
                         <TextView
-                            android:id="@+id/tvTotalPaid"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Rp 0"
-                            android:textColor="@color/primary_dark"
-                            android:textStyle="bold"
-                            android:textSize="18sp" />
+                            android:background="@drawable/bg_verified_chip"
+                            android:backgroundTint="#33FFFFFF"
+                            android:text="@string/label_lunas"
+                            android:textColor="@color/white"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
                     </LinearLayout>
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>

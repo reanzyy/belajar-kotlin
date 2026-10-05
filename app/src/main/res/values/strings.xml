@@ -1,3 +1,31 @@
 <resources>
     <string name="app_name">FintechBillingApp</string>
+    <string name="title_fintech_billing">Fintech Billing</string>
+    <string name="subtitle_engine">E-Receipt &amp; JSON Engine</string>
+    <string name="system_status">SYSTEM READY v1.0</string>
+    <string name="dashboard_title">Dashboard Tagihan Digital</string>
+    <string name="dashboard_desc">Kelola dan verifikasi faktur pembayaran e-receipt secara cepat, presisi, dan terstruktur.</string>
+    <string name="json_parser_title">Uji Coba Deserialisasi JSON</string>
+    <string name="json_parser_subtitle">Parsing data Merchant via Engine Gson</string>
+    <string name="btn_execute_parse">Eksekusi Parsing JSON</string>
+    <string name="console_title">OUTPUT PARSER CONSOLE</string>
+    <string name="console_initial_text">Tekan tombol di atas untuk menjalankan parsing JSON.</string>
+    <string name="invoice_module_title">E-Receipt &amp; Faktur Digital</string>
+    <string name="invoice_module_subtitle">Modul Faktur Kompleks &amp; Rincian Belanja</string>
+    <string name="invoice_module_desc">Tampilkan faktur digital interaktif yang memuat informasi merchant, rincian barang, PPN 11%, serta total pembayaran secara real-time.</string>
+    <string name="btn_open_invoice">Buka Faktur Tagihan</string>
+
+    <!-- Invoice Screen -->
+    <string name="title_invoice_screen">Faktur Tagihan</string>
+    <string name="status_settled">PAID / SETTLED</string>
+    <string name="label_merchant_section">Penyedia Penjualan (Merchant)</string>
+    <string name="label_customer_section">Penerima Tagihan (Customer)</string>
+    <string name="label_items_section">Rincian Pembelian Produk</string>
+    <string name="label_subtotal">Subtotal Produk</string>
+    <string name="label_discount">Diskon Promo</string>
+    <string name="label_tax_ppn">Pajak PPN (11%)</string>
+    <string name="label_service_fee">Biaya Layanan</string>
+    <string name="label_total_paid">TOTAL PEMBAYARAN</string>
+    <string name="label_lunas">LUNAS</string>
+    <string name="cd_back">Kembali</string>
 </resources>
