@@ -45,4 +45,5 @@ Waktu        : Baru Saja
     <string name="dialog_network_title">Gangguan Jaringan Perbankan</string>
     <string name="dialog_network_msg">Koneksi jaringan telah gagal 3 kali berturut-turut. Direkomendasikan untuk mengalihkan pelanggan ke Pembayaran Tunai Manual.</string>
     <string name="mengerti">Mengerti</string>
+    <string name="status_online">&#9679; ONLINE</string>
 </resources>

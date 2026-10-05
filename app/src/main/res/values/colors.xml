@@ -1,36 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Basic Colors -->
+    <!-- ===== Minimalist Clean White Palette (Apple / Stripe) ===== -->
+
+    <!-- Brand Primary -->
+    <color name="primary">#1D1D1F</color>           <!-- Ink Charcoal Black -->
+    <color name="primary_accent">#0071E3</color>    <!-- Apple Royal Blue -->
+    <color name="primary_light">#F0F6FF</color>     <!-- Soft Blue Tint -->
+    <color name="primary_dark">#111113</color>
+
+    <!-- Status Colors -->
+    <color name="success">#34C759</color>           <!-- Apple Emerald Green -->
+    <color name="success_light">#E8F8EC</color>     <!-- Soft Green Tint -->
+    <color name="success_dark">#1C7A36</color>
+
+    <!-- POS Custom Colors -->
+    <color name="pos_success_green">#34C759</color>
+    <color name="pos_success_bg">#F0FDF4</color>
+    <color name="pos_error_red">#FF3B30</color>
+    <color name="pos_warning_yellow">#FFCC00</color>
+
+    <!-- Backgrounds -->
+    <color name="background">#F5F5F7</color>        <!-- Apple Off-White Surface -->
+    <color name="surface">#FFFFFF</color>           <!-- Pure White Card -->
+    <color name="surface_secondary">#FAFAFA</color>
+    <color name="surface_elevated">#FFFFFF</color>
+
+    <!-- Text Colors -->
+    <color name="text_primary">#1D1D1F</color>      <!-- Apple Charcoal -->
+    <color name="text_secondary">#6E6E73</color>    <!-- Apple Subdued Gray -->
+    <color name="text_muted">#86868B</color>        <!-- Apple Light Gray -->
+    <color name="text_accent">#0071E3</color>       <!-- Apple Blue -->
+    <color name="divider">#E5E5EA</color>           <!-- Apple Subtle Line -->
+
+    <!-- Utility -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="transparent">#00000000</color>
 
-    <!-- Material 3 Inspired Brand Colors -->
-    <color name="md_theme_light_primary">#006874</color>
+    <!-- Shadow Layer -->
+    <color name="shadow_light">#0D000000</color>   <!-- 5% black shadow -->
+    <color name="shadow_medium">#1A000000</color>  <!-- 10% black shadow -->
+
+    <!-- Material Theme Mapping -->
+    <color name="md_theme_light_primary">#1D1D1F</color>
     <color name="md_theme_light_onPrimary">#FFFFFF</color>
-    <color name="md_theme_light_primaryContainer">#97F0FF</color>
-    <color name="md_theme_light_onPrimaryContainer">#001F24</color>
-
-    <color name="md_theme_light_secondary">#4A6267</color>
+    <color name="md_theme_light_primaryContainer">#F0F6FF</color>
+    <color name="md_theme_light_onPrimaryContainer">#1D1D1F</color>
+    <color name="md_theme_light_secondary">#6E6E73</color>
     <color name="md_theme_light_onSecondary">#FFFFFF</color>
-    <color name="md_theme_light_secondaryContainer">#CDE7EC</color>
-    <color name="md_theme_light_onSecondaryContainer">#051F23</color>
-
-    <color name="md_theme_light_error">#BA1A1A</color>
-    <color name="md_theme_light_errorContainer">#FFDAD6</color>
+    <color name="md_theme_light_secondaryContainer">#E5E5EA</color>
+    <color name="md_theme_light_onSecondaryContainer">#1D1D1F</color>
+    <color name="md_theme_light_error">#FF3B30</color>
+    <color name="md_theme_light_errorContainer">#FFECEB</color>
     <color name="md_theme_light_onError">#FFFFFF</color>
-    <color name="md_theme_light_onErrorContainer">#410002</color>
-
-    <color name="md_theme_light_background">#FAFDFD</color>
-    <color name="md_theme_light_onBackground">#191C1D</color>
-    <color name="md_theme_light_surface">#FAFDFD</color>
-    <color name="md_theme_light_onSurface">#191C1D</color>
-    <color name="md_theme_light_surfaceVariant">#DBE4E6</color>
-    <color name="md_theme_light_onSurfaceVariant">#3F484A</color>
-    <color name="md_theme_light_outline">#6F797B</color>
-
-    <!-- Specific Custom UI Colors -->
-    <color name="pos_success_green">#16A34A</color>
-    <color name="pos_success_bg">#F0FDF4</color>
-    <color name="pos_error_red">#991B1B</color>
-    <color name="pos_warning_yellow">#FEF08A</color>
+    <color name="md_theme_light_onErrorContainer">#D70015</color>
+    <color name="md_theme_light_background">#F5F5F7</color>
+    <color name="md_theme_light_onBackground">#1D1D1F</color>
+    <color name="md_theme_light_surface">#FFFFFF</color>
+    <color name="md_theme_light_onSurface">#1D1D1F</color>
+    <color name="md_theme_light_surfaceVariant">#FAFAFA</color>
+    <color name="md_theme_light_onSurfaceVariant">#6E6E73</color>
+    <color name="md_theme_light_outline">#E5E5EA</color>
 </resources>
