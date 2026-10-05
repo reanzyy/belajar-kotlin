@@ -1,0 +1,29 @@
+package com.example.logisticstrackerapp
+
+import com.google.gson.annotations.SerializedName
+
+data class TrackingResponse(
+    @SerializedName("id")
+    val id: String? = null,
+
+    @SerializedName("tracking_number")
+    val trackingNumber: String,
+
+    @SerializedName("courier_name")
+    val courierName: String,
+
+    @SerializedName("service_type")
+    val serviceType: String,
+
+    @SerializedName("status")
+    val status: String, // "IN_TRANSIT", "DELIVERED", "PENDING"
+
+    @SerializedName("last_location")
+    val lastLocation: String,
+
+    @SerializedName("estimated_delivery")
+    val estimatedDelivery: String,
+
+    @SerializedName("recipient_name")
+    val recipientName: String
+)
